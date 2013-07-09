@@ -1,4 +1,13 @@
 Photogur::Application.routes.draw do
+  
+  post 'pictures' => "pictures#create" # this is a new line of code
+
+  get 'pictures' => 'pictures#index'
+
+  get 'pictures/new' => 'pictures#new' # this is also a new line of code
+  get 'pictures/:id' => 'pictures#show'
+
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,10 +21,6 @@ Photogur::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
-  get 'pictures' => 'pictures#index'
-  
-  get 'pictures/:id' => 'pictures#show', as: "picture"
 
   # Sample resource route with options:
   #   resources :products do
@@ -59,4 +64,3 @@ Photogur::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
-end
